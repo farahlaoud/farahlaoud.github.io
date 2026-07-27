@@ -55,7 +55,8 @@ h1, h2, h3, .v2-display{
 }
 .v2-nav-name{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; }
 .v2-nav-role{ color: var(--ink-soft); font-size: 14px; margin-top: 2px; }
-.v2-nav-links{ display:flex; gap: 32px; margin-top: 6px;}
+.v2-nav-links{ display:flex; margin-top: 6px; }
+.v2-nav-links a + a{ margin-left: 32px; }
 .v2-nav-links a{ color: var(--ink); text-decoration: none; font-size: 15px; }
 .v2-nav-links a:hover{ color: var(--accent); }
 
@@ -195,17 +196,7 @@ h1, h2, h3, .v2-display{
 .v2-case-media img{ width: 100%; display: block; }
 .v2-case h3{ font-size: 26px; margin-bottom: 10px; }
 .v2-case p{ color: var(--ink-soft); font-size: 16px; }
-.v2-case a.v2-link{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
-}
-.v2-case a.v2-link:hover{ text-decoration: underline; }
+.v2-case a.v2-link{ margin-top: 14px; }
 
 @media (max-width: 860px){
   .v2-case{ grid-template-columns: 1fr; }
@@ -293,4 +284,61 @@ h1, h2, h3, .v2-display{
   object-position: center;
   border-radius: 6px;
   box-shadow: 0 18px 44px rgba(0,0,0,0.45);
+}
+
+/* ---------- Liens d'action : bouton lisible, partout ---------- */
+.v2-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--paper-raised);
+  color: var(--accent);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+.v2-link:visited{ color: var(--accent); }
+.v2-link:hover{ background: var(--accent); color: var(--paper); }
+
+/* ---------- Vidéos : ratio 16:9 responsive ---------- */
+.v2-video{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ink);
+}
+.v2-video iframe{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* ---------- Navigation mobile : plus de chevauchement ---------- */
+@media (max-width: 760px){
+  .v2-nav{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 24px 0 24px;
+  }
+  .v2-nav-links{
+    margin-top: 0;
+    flex-wrap: wrap;
+  }
+  .v2-nav-links a + a{ margin-left: 26px; }
+  .v2-nav-links a{ font-size: 16px; }
+  .v2-hero h1{ font-size: 30px; }
+  .v2-bignum{ font-size: 46px; }
+  .v2-num-row{ gap: 28px !important; }
+  .v2-stat-strip{ padding: 20px 18px; }
 }
