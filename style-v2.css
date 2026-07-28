@@ -342,3 +342,26 @@ h1, h2, h3, .v2-display{
   .v2-num-row{ gap: 28px !important; }
   .v2-stat-strip{ padding: 20px 18px; }
 }
+
+/* ---------- Visuels : passe-partout teinté, coins doux, survol léger ---------- */
+.v2-section img{
+  background: #F1F0EA !important;
+  border: none !important;
+  border-radius: 16px !important;
+  padding: 22px !important;
+  box-sizing: border-box;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.v2-section img:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(20, 21, 26, 0.11);
+}
+
+/* les bandeaux héro gardent leur traitement d'origine */
+.v2-hero-band img{
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+}
+.v2-hero-band img:hover{ transform: none; box-shadow: 0 24px 60px rgba(0,0,0,0.22); }
+.v2-hero-band--slide img{ border-radius: 6px !important; }
